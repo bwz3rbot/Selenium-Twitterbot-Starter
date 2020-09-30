@@ -101,19 +101,13 @@ async function verifyLogin() {
 async function addCookies(cookies) {
     console.log("adding cookies...")
     cookies = JSON.parse(cookies);
-    console.log(cookies)
-
-    console.log("adding cookies....")
     for (const [key, value] of Object.entries(cookies)) {
-        console.log("key: ", key)
-        console.log("value: ", value)
         let cookieObject = {}
         for (const [k, v] of Object.entries(value)) {
             cookieObject[k] = v
         }
         cookieObject.domain = "twitter.com"
         cookieObject.sameSite = "Lax"
-        console.log("adding cookieObject: ", cookieObject)
         await (await driver).manage().addCookie({
             name: cookieObject.name,
             value: cookieObject.value,
