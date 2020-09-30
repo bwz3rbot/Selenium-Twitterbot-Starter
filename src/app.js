@@ -1,7 +1,7 @@
 /*
 Navigates to twitter.com and logs into the account.
-Saves session data to a json file.
-Uses session to log back in.
+Saves cookie data to a json file.
+Uses cookies to log back in.
 */
 
 require('dotenv').config({
